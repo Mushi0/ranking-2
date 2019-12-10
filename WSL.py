@@ -3,7 +3,7 @@ import xlwt, xlrd
 import xlutils.copy
 import MyRanking as mr
 
-FILENAME2018 = 'Results/WSL2018.xls'
+FILENAME2018 = 'Results/WSL2018-2019.xls'
 FILENAME2015 = 'Results/WSL2015.xls'
 FILENAME2014 = 'Results/WSL2014.xls'
 FILENAME2013 = 'Results/WSL2013.xls'
@@ -23,10 +23,10 @@ def WSL2018():
 	pattern = re.compile('<tr><td style="text-align:center;">(.*?)</td><td style="text-align:center;">(.*?)</td><td style="text-align:center;">(.*?)</td><td style="text-align:center;">(.*?)</td><td style="text-align:center;">(.*?)</td></tr>', re.S)
 	result = re.findall(pattern, html)
 	t = 1
+	pattern1 = re.compile("[\u4e00-\u9fa5]+", re.S)
 	for item in result:
 		for i in range(5):
 			if i == 1 or i == 3:
-				pattern1 = re.compile("[\u4e00-\u9fa5]+", re.S)
 				r = re.findall(pattern1, item[i])
 				mr.writeToExcel(FILENAME2018, t, i, "".join(r))
 			else:
@@ -41,10 +41,10 @@ def WSL2(row, name, url, pt):
 	result = re.findall(pattern, html)
 	t = 1
 	l = len(result[0])
+	pattern1 = re.compile("[\u4e00-\u9fa5]+", re.S)
 	for item in result:
 		for i in range(l):
 			if i == 1:
-				pattern1 = re.compile("[\u4e00-\u9fa5]+", re.S)
 				r = re.findall(pattern1, item[i])
 				mr.writeToExcel(name, t, i, "".join(r))
 			else:
@@ -54,4 +54,4 @@ def WSL2(row, name, url, pt):
 # WSL2018()
 # WSL2(ROW2015, FILENAME2015, '6119.html', PATTERN2015)
 # WSL2(ROW2014, FILENAME2014, '1387.html', PATTERN2014)
-WSL2(ROW2014, FILENAME2013, '1389.html', PATTERN2013)
+# WSL2(ROW2014, FILENAME2013, '1389.html', PATTERN2013)
