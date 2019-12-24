@@ -19,3 +19,7 @@ It is meant to crawl some informations of 武书连大学排名.
 ### XYH.py
 
 It is meant to crawl some informations of 校友会大学排名. 
+
+### RK.py
+
+It is meant to crawl some informations of 软科最好大学排名. 
