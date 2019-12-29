@@ -30,3 +30,12 @@ def getOnePage(url, deco):
 		return None
 	except RequestException:
 		return None
+
+def saveOneFile(file_name, url):
+	headers = {
+		'User-Agent': 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
+	}
+	resp = requests.get(url, headers = headers)
+	with open('Results/' + file_name, 'wb') as f:
+		f.write(resp.content)
+		print('Already Downloaded', file_name)

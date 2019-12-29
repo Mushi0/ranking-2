@@ -27,3 +27,11 @@ It is meant to crawl some informations of 软科最好大学排名.
 ### RK2.py
 
 It is meant to crawl some informations of 软科两岸四地大学排名. 
+
+### QS.py
+
+It is meant to crawl some informations of QS世界大学排名-亚洲. 
+
+### Times.py
+
+It is meant to crawl some informations of Times世界大学排名-亚洲 (Unfinished). 
